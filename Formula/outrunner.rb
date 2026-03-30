@@ -24,7 +24,7 @@ class Outrunner < Formula
 
   def install
     bin.install "outrunner"
-    etc.install "config.yml" => "outrunner/config.yml" if File.exist? "config.yml"
+    (etc/"outrunner").mkpath
   end
 
   service do
@@ -36,12 +36,15 @@ class Outrunner < Formula
 
   def caveats
     <<~EOS
-      To configure outrunner, edit:
+      Create a config file at:
         #{etc}/outrunner/config.yml
 
-      Set your GitHub token via environment or file:
-        echo 'GITHUB_TOKEN=ghp_...' > #{etc}/outrunner/env
-        chmod 600 #{etc}/outrunner/env
+      Store your GitHub token in a file (not on the command line):
+        touch #{etc}/outrunner/token
+        chmod 600 #{etc}/outrunner/token
+        # Edit the file and paste your token
+
+      See https://github.com/NetwindHQ/gha-outrunner/blob/main/docs/howto/launchd-service.md
 
       Start the service:
         brew services start outrunner
