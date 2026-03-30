@@ -29,10 +29,18 @@ class Outrunner < Formula
       (etc/"outrunner/config.yml").write <<~YAML
         # outrunner configuration
         # See https://github.com/NetwindHQ/gha-outrunner/blob/main/docs/reference/configuration.md
+        #
+        # Quick setup:
+        #   1. Set the url below to your GitHub repository or organization
+        #   2. Put your GitHub token into #{etc}/outrunner/token
+        #   3. Uncomment the runners section and adjust to your needs
+        #   4. Start the service: brew services start outrunner
 
         url: https://github.com/your-org/your-repo
         token_file: #{etc}/outrunner/token
 
+        # Uncomment and adjust the runners section below.
+        # Each entry creates a scale set that GitHub routes jobs to based on labels.
         # runners:
         #   linux:
         #     labels: [self-hosted, linux]
