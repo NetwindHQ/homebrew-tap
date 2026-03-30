@@ -47,6 +47,7 @@ class Outrunner < Formula
     keep_alive true
     log_path var/"log/outrunner.log"
     error_log_path var/"log/outrunner.log"
+    environment_variables PATH: "#{HOMEBREW_PREFIX}/bin:#{HOMEBREW_PREFIX}/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
   end
 
   def caveats
