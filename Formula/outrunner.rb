@@ -25,6 +25,21 @@ class Outrunner < Formula
   def install
     bin.install "outrunner"
     (etc/"outrunner").mkpath
+    unless (etc/"outrunner/config.yml").exist?
+      (etc/"outrunner/config.yml").write <<~YAML
+        # outrunner configuration
+        # See https://github.com/NetwindHQ/gha-outrunner/blob/main/docs/reference/configuration.md
+
+        url: https://github.com/your-org/your-repo
+        token_file: #{etc}/outrunner/token
+
+        # runners:
+        #   linux:
+        #     labels: [self-hosted, linux]
+        #     docker:
+        #       image: ghcr.io/actions/actions-runner:latest
+      YAML
+    end
   end
 
   service do
@@ -36,13 +51,11 @@ class Outrunner < Formula
 
   def caveats
     <<~EOS
-      Create a config file at:
+      Edit the config:
         #{etc}/outrunner/config.yml
 
-      Store your GitHub token in a file (not on the command line):
-        touch #{etc}/outrunner/token
-        chmod 600 #{etc}/outrunner/token
-        # Edit the file and paste your token
+      Put your GitHub token into #{etc}/outrunner/token
+      then: chmod 600 #{etc}/outrunner/token
 
       See https://github.com/NetwindHQ/gha-outrunner/blob/main/docs/howto/launchd-service.md
 
