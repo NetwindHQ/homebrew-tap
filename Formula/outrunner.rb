@@ -1,24 +1,24 @@
 class Outrunner < Formula
   desc "Ephemeral GitHub Actions runners, no Kubernetes required"
   homepage "https://github.com/NetwindHQ/gha-outrunner"
-  version "1.0.0-rc7"
+  version "1.0.0"
   license "MIT"
 
   on_macos do
     on_arm do
       url "https://github.com/NetwindHQ/gha-outrunner/releases/download/v#{version}/outrunner_#{version}_darwin_arm64.tar.gz"
-      sha256 "265cc0ab2d6eb9f0895be126215991cb7ef3a1d5cce6bf76f8cac5402948647f"
+      sha256 "1d8d8aa6c5b3a6fbf9f04626849f0567ad4a33c30d25cc81194f3370822896ef"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/NetwindHQ/gha-outrunner/releases/download/v#{version}/outrunner_#{version}_linux_amd64.tar.gz"
-      sha256 "4abb93cdc9c7a4a7405addf32f0fee663579e60cfc79fe65c5fba59b94b68562"
+      sha256 "061a3fe930977e03c32469b93c57c77761bc326ade47731b4e789dc1d816ca3b"
     end
     on_arm do
       url "https://github.com/NetwindHQ/gha-outrunner/releases/download/v#{version}/outrunner_#{version}_linux_arm64.tar.gz"
-      sha256 "7daf8c87f8e5b7516162c7c9a7c4ac2a49e4ea692f1f557de45bcf3fdaa5e4f3"
+      sha256 "31885dc2fc00e06c63aeafe023ac2a5937399cd752ab86f79088e4e0f51127e2"
     end
   end
 
