@@ -7,18 +7,18 @@ class Outrunner < Formula
   on_macos do
     on_arm do
       url "https://github.com/NetwindHQ/gha-outrunner/releases/download/v#{version}/outrunner_#{version}_darwin_arm64.tar.gz"
-      sha256 "1d8d8aa6c5b3a6fbf9f04626849f0567ad4a33c30d25cc81194f3370822896ef"
+      sha256 "6ed5d278ada9b0399b0dcd55a869c620a03c834e321d078e7c5a25a6956e51bc"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/NetwindHQ/gha-outrunner/releases/download/v#{version}/outrunner_#{version}_linux_amd64.tar.gz"
-      sha256 "061a3fe930977e03c32469b93c57c77761bc326ade47731b4e789dc1d816ca3b"
+      sha256 "d6b8d187a53dbed3e1062afef21dc1cb5089f2605816db00c8d1c445554a65e6"
     end
     on_arm do
       url "https://github.com/NetwindHQ/gha-outrunner/releases/download/v#{version}/outrunner_#{version}_linux_arm64.tar.gz"
-      sha256 "31885dc2fc00e06c63aeafe023ac2a5937399cd752ab86f79088e4e0f51127e2"
+      sha256 "3a80aa15d6b233b16dca83b2dfc4385c62cdaa7a2c8cd9b127588f85d78dfe95"
     end
   end
 
