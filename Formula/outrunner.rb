@@ -66,7 +66,7 @@ class Outrunner < Formula
       Put your GitHub token into #{etc}/outrunner/token
       then: chmod 600 #{etc}/outrunner/token
 
-      See https://github.com/NetwindHQ/gha-outrunner/blob/main/docs/howto/launchd-service.md
+      See https://github.com/NetwindHQ/gha-outrunner/blob/main/docs/setup/macos.md
 
       Start the service:
         brew services start outrunner
